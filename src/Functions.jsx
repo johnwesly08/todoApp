@@ -3,14 +3,11 @@ import { Fragment, useState } from 'react';
 export default function Adding() {
     const [inputValue1, setInputValue1] = useState('');
     const [inputValue2, setInputValue2] = useState('');
-    const [displayValue1, setDisplayValue1] = useState('');
-    const [displayValue2, setDisplayValue2] = useState('');
+    const [displayValues, setDisplayValues] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setDisplayValue1(inputValue1);
-        setDisplayValue2(inputValue2);
-        display();
+        setDisplayValues(true);
     };
 
     return (
@@ -26,19 +23,21 @@ export default function Adding() {
                     <input type="text" value={inputValue2} onChange={(e) => setInputValue2(e.target.value)} placeholder='Enter task description'></input>
                     <button type="submit" onClick={handleSubmit}>Write</button>
                 </form>
-
+                {displayValues && (
+                    <section>
+                        <p> {inputValue1}</p>
+                        <p> {inputValue2}</p>
+                        <ul className='btns'>
+                            {/* <button onClick={edit}>Edit</button> */}
+                            <button type='reset' onClick={() => setInputValue1('') & setInputValue2('') & setDisplayValues(false)}>Del</button>
+                            <button type='reset' onClick={() => setInputValue1('') & setInputValue2('') & setDisplayValues(false)}></button>
+                        </ul>
+                    </section>
+                )};
             </section>
+
+
         </Fragment >
     );
 };
 
-function display() {
-
-    return (
-        alert("joker..!")
-        // <Fragment>
-        //     {setDisplayValue1 && <p>Title {displayValue1}</p>}
-        //     {setDisplayValue2 && <p>Descp {displayValue2}</p>}
-        // </Fragment>
-    );
-};

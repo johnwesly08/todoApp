@@ -16,7 +16,6 @@ export default function App() {
           <section>
             <button onClick={btnHandle}>Add New Task</button>
             {AddingNew && <Adding />}
-            
           </section>
       </Fragment>
     </>
