@@ -10,11 +10,11 @@ export default function App() {
   return (
     <>
       <Fragment>
-          <header>
+          <header className='head'>
             <h3>To-Do App</h3>
           </header>
-          <section>
-            <button onClick={btnHandle}>Add New Task</button>
+          <section className='body'>
+            <button onClick={btnHandle} id="addBtn">Add New Task</button>
             {AddingNew && <Adding />}
           </section>
       </Fragment>
