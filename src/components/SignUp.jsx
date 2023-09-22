@@ -16,7 +16,6 @@ export default function SignUp() {
     }
 
     const handleClear = () => {
-        e.preventDefault();
         setUserDetails(initialState);
     }
     return (
