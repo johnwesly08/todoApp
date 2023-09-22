@@ -1,10 +1,21 @@
-import React, {useState} from "react";
-import Function from './Functions.jsx';
+import React, { useState } from "react";
+import Routing from "./components/routing";
 
-function App() {
-  return(
+
+export default function App() {
+  return (
     <>
-    
+      <header className="Title">
+        <h2>
+          TodoApp
+        </h2>
+      </header>
+      <section className="body" >
+        <Routing />
+      </section>
+      <footer>
+        <p>All Rights reserved @ JW Inc., 2023</p>
+      </footer>
     </>
   );
 };
